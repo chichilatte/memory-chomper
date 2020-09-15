@@ -7,7 +7,7 @@ This is just a simple webpage to give you a browser tab that's incredibly memory
 
 **See it in action...**
 
-[http://coob.co.uk/binhole/chomp](http://coob.co.uk/binhole/chomp)
+[https://ghcdn.rawgit.org/chichilatte/memory-chomper/master/index.html](https://ghcdn.rawgit.org/chichilatte/memory-chomper/master/index.html)
 
 
 ## Testing
