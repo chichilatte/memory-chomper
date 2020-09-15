@@ -18,13 +18,17 @@
 		font-size: 18px;
 	}
 	p.smallprint {
-		font-size: 10px;
+		font-size: 12px;
 		font-style:italic;
 		position:absolute; bottom:5px; padding-left: 5px; padding-right: 90px; 
 	}
 	
 	p.smallprint code {
-		color: black
+		color: #888;
+	}
+	p.smallprint code.terminal {
+		font-style:normal;
+		color: white; background-color: black;
 	}
 </style>
 
@@ -46,12 +50,14 @@
 <br>
 <p>Chomped <b id="total">0</b> megs in total.</p>
 
-
 <p class="smallprint">
-	Note: These fancy stats are only accurate if you're in the Chrome browser and have started it with the <code>enable-precise-memory-info</code> setting. E.g. on a mac you'd run in the terminal...
-	<br><br>
-	
-	<code>/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --enable-precise-memory-info</code>
+	The fancy stats on the right are only accurate in Chrome with the <code>enable-precise-memory-info</code> setting turned on. 
+	<br>
+	E.g. on a mac you'd run in the terminal...
+	<br>
+	<code class="terminal">
+		/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --enable-precise-memory-info
+	</code>
 </p>
 <script>
 
@@ -80,5 +86,6 @@
 
 
 </script>
+
 </body>
 </html>
