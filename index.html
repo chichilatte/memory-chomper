@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-- Make everything not look totally rubbish -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+
+<!-- 
+	Some fancy memory stats for Chrome browser to drop into the page.
+-->
+<script src="https://rawgit.com/paulirish/memory-stats.js/master/bookmarklet.js"></script>
+
+<style>
+	body {
+		padding: 20px;
+	}
+	h3 {
+		font-size: 18px;
+	}
+	p.smallprint {
+		font-size: 10px;
+		font-style:italic;
+		position:absolute; bottom:5px; padding-left: 5px; padding-right: 90px; 
+	}
+	
+	p.smallprint code {
+		color: black
+	}
+</style>
+
+</head>
+<body>
+
+<h2>Memory chomper</h2>
+<h3>Make your browser tab chomp through memory</h3>
+
+<br>
+
+<form onSubmit="chomp();return false;">
+	<label for="size">How many megs?</label><br>
+	<input type="text" id="size" value="100">
+    
+    <input type="submit" value="Chomp!">
+</form>
+
+<br>
+<p>Chomped <b id="total">0</b> megs in total.</p>
+
+
+<p class="smallprint">
+	Note: These fancy stats are only accurate if you're in the Chrome browser and have started it with the <code>enable-precise-memory-info</code> setting. E.g. on a mac you'd run in the terminal...
+	<br><br>
+	
+	<code>/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --enable-precise-memory-info</code>
+</p>
+<script>
+
+	var totalMegs = 0
+	var blobs = []
+
+	function chomp(vars) {
+		let megs = Number(document.getElementById("size").value)
+		if (isNaN(megs) || megs <= 0) return;
+
+		let blob = new Uint8Array(megs * 1000000)
+		// We have to fill the blob, otherwise it doesn't seem to take any memory
+		blob.fill(0);
+		blobs.push(blob)
+
+		totalMegs += megs
+		updateTotal()
+	}
+
+	function updateTotal() {
+		document.getElementById("total").innerHTML = totalMegs
+	}
+
+
+	updateTotal()
+
+
+</script>
+</body>
+</html>
