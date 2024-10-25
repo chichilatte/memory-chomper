@@ -7,7 +7,11 @@ This is just a simple webpage to give you a browser tab that's incredibly memory
 
 **See it in action...**
 
-[https://ghcdn.rawgit.org/chichilatte/memory-chomper/master/index.html](https://ghcdn.rawgit.org/chichilatte/memory-chomper/master/index.html)
+[https://chichilatte.github.io/memory-chomper/](https://chichilatte.github.io/memory-chomper/)  
+
+or...  
+
+[https://tinyurl.com/memchomp](https://tinyurl.com/memchomp)
 
 
 ## Testing
